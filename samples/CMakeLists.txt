@@ -242,10 +242,11 @@ endif()
 ## SUBDIRECTORIES ##
 
 add_subdirectory(hellovr_opengl)
-if(NOT (${CMAKE_SYSTEM_NAME} MATCHES "Darwin"))
-  add_subdirectory(hellovr_vulkan)
-endif()
-add_subdirectory(helloworldoverlay)
-add_subdirectory(tracked_camera_openvr_sample)
+#if(NOT (${CMAKE_SYSTEM_NAME} MATCHES "Darwin"))
+#  add_subdirectory(hellovr_vulkan)
+#endif()
+#add_subdirectory(helloworldoverlay)
+#add_subdirectory(tracked_camera_openvr_sample)
+add_subdirectory(ProthesisSimulator)
 
 # -----------------------------------------------------------------------------
