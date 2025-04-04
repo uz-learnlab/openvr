@@ -523,6 +523,8 @@ bool CMainApplication::ImageIntoPhosohenes() {
 
 		if (sleepFlag)
 			std::this_thread::sleep_for(std::chrono::milliseconds(10 - static_cast<int>(time_span.count())));
+
+        return true;
 	
 }
 
@@ -632,7 +634,6 @@ void CMainApplication::RenderFrame()
             {
                 cv::Mat img = frame(roi[i]);
 				srcbn1Right = SingleViewToPhosphenes(img, 128, 48, 12 * 32, 12 * 32);
-				
                 ImageIntoPhosohenes();
 				
 				// Muestra en una ventana
@@ -723,6 +724,8 @@ bool CMainApplication::Initialitation() {
 	x_right = datos[1];
 	N_levels = datos[3];
 
+    std::cout<<N_levels<<std::endl;
+
 	plotImg = cv::Mat::zeros(cv::Size(384, 384), 16);
 
 	X0 = plotImg.cols / 2;
@@ -802,6 +805,8 @@ bool CMainApplication::Initialitation() {
 	casoLeft = cv::Mat::zeros(phosphenesPos.cols, 10, CV_8U);
 	grayThreshold1 = 1;
 	grayThreshold2 = 6;
+
+    return true;
 }
 
 //-----------------------------------------------------------------------------
